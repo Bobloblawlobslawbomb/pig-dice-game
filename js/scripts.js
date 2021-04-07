@@ -16,21 +16,21 @@ function getRandomInt(min, max) {
 function playerRoll() {
   return getRandomInt(1,7); 
 } 
-// ^^^^ This works great
 
+// This function returns "player two turn" if player rolls 1
+function GameRound(playerRoll){
+  let playerScore = 0;
+  if (playerRoll === 1){
+    playerScore = 0;
+    console.log("player Two turn")
+  } else {
+    playerScore = playerScore + playerRoll;
+    console.log(playerScore);
+  }
+}
 // > Roll > Roll again || pass > switch players. Display Roll Total: 100. Times Rolls: X
 
 // when we roll we get a value. we store value (total/current score) in variable. Decide to roll again and add that new value (current score) to original value to have (total Score) OR pass.
-
-
-
-
-
-// (Easy) computer rolls > rolls again > passes
-// (hard) Computer rolls based on if then statement
-// if <=3 computer passes || >=4 && <=6
-
-
 
 Player.prototype.outcome() {
     let  playerRoll = playerRoll();
