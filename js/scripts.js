@@ -1,10 +1,35 @@
 // BUSINESS LOGIC
-function Player(label, previousScore, currentScore, totalScore){
+function Player(label){
   this.label = label;
-  this.previousScore = previousScore;
-  this.currentScore = currentScore;
-  this.totalScore = totalScore;
+  this.currentRoll = 0;
+  this.roundScore = 0; 
+  this.gameScore = 0;
 }
+
+
+//ROUND 1
+// Roll 6
+// Player.currentRoll = 6  Player.turnScore = 6 
+// ROll again (2)
+// Current score = 2 Round score = 8 gameScore = 8
+
+//Pass other player goes
+// Round 2
+// Current score = 3 Round score = 3 
+// ROll again
+// Current score = 4 Round score = 7 
+// Rolls 1
+// Current score = 1 Round score = 0 gameScore = 8
+
+// Round 3
+// Current score = 2 Round score = 2 
+// ROll again
+// Current score = 3 Round score = 5
+// Rolls again
+// Current score = 4 Round score = 9 
+// PASS gameScore = 17
+
+
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -13,39 +38,27 @@ function getRandomInt(min, max) {
 }
 
 // This function returns a random # between 1-6
-function playerRoll() {
+function currentRollFunction() {
   return getRandomInt(1,7); 
 } 
 
 // This function returns "player two turn" if player rolls 1
-function GameRound(playerRoll){
-  let playerScore = 0;
-  if (playerRoll === 1){
-    playerScore = 0;
-    console.log("player Two turn")
+Player.prototype.GameRound = function () {
+  let rollValue = currentRollFunction(); 
+  //Player.currentRoll = currentRollFunction(); this.currentRoll = `{currentRollFunction()}`.val()
+  
+  console.log("rollValue is "+rollValue);
+  if (rollValue === 1){
+    this.roundScore = 0;
+    //return 
+    console.log("next player turn")
   } else {
-    playerScore = playerScore + playerRoll;
-    console.log(playerScore);
+    this.roundScore = this.roundScore + rollValue;
+    this.gameScore = this.gameScore + this.roundScore;
+    console.log("Round score is "+this.roundScore);
+    console.log("Game score is "+this.gameScore);
   }
 }
-// > Roll > Roll again || pass > switch players. Display Roll Total: 100. Times Rolls: X
-
-// when we roll we get a value. we store value (total/current score) in variable. Decide to roll again and add that new value (current score) to original value to have (total Score) OR pass.
-
-Player.prototype.outcome() {
-    let  playerRoll = playerRoll();
-      if (playerRoll != 1) {
-        this.totalScore += playerRoll();
-      //add to thisRoundScore
-      //Can roll again or pass
-      playerRoll = 0;
-    } else if (playerRoll === 1) {
-      //score becomes 0 if a 1 is rolled
-      //add to thisRoundScore
-      //then it becomes next players turn
-        thisRoundScore = 0;
-    }
-  }
 
 function canTakeAnotherTurn(previousScore) {
   if (previousScore === 1) {
@@ -56,8 +69,9 @@ function canTakeAnotherTurn(previousScore) {
 }
 
 // UI Logic 
-const player1 = new Player("Donald", 0,0)
-//by this point the constructor has made the player1 'Object'
+let player1 = new Player("Donald");
+let player2 = new Player("Sara"); 
+//by this point the constructor has made the player1 and player2 'Object'
 
 $(document).ready(function(event) {
   event.preventDefault()
@@ -66,11 +80,6 @@ $(document).ready(function(event) {
     let PlayerRoll1 = rollDIe()
     playerRoll1
 
-    console.log(`${outcome}`) 
+    console.log(`${roundScore}`) 
   });
 });
-
-
-
-
-

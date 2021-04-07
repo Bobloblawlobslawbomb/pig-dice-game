@@ -1,12 +1,12 @@
 ### 🐖 Pig Dice Game 🎲
 
-##### By Carlos Mendez, Cassandra Copp, Giancarlo Vigneri, Isaac Moreno
+##### By Cassandra Copp, Giancarlo Vigneri, Isaac Moreno, Carlos Mendez
 
 [View Here](https://github.com/isaacrmoreno/pig-dice-game)
 
 ### Description:
 
-Pig dice is a dice game where players takes turns rolling a single die. They can roll as many times as they like, adding up their total each time unless they decide to pass or roll a one where they lose their total.
+Pig dice is a dice game where players takes turns rolling a single die. They can roll as many times as they like. If player rolls 1 they score 0 for the round and end turn. If player holds their score for the round their round score is added to total score. If player reaches 100 total score they win!
 
 ### Example:
 
@@ -22,21 +22,21 @@ The first player, Donald, begins a turn with a roll of 5. Donald could hold and 
 
 ### Testing:
 
-Describe: playerRoll()
+Describe: currentRollFunction()
 Test: "It should return an integer between 1 and 6."
-Code: playerRoll();
+Code: currentRollFunction();
 Expected output: 1 || 2 || 3 || 4 || 5 || 6
 
-One die
-Player may roll or hold
-If player rolls 1 they score 0 for the round and end turn
-If player holds their score for the round is added to total score
-If player reaches 100 total score they win
+Describe: Player.prototype.GameRound()
+Test: "It should console.log "next player turn" if a 1 is rolled. If 2-5 is rolled, it should change player roundScore and gameScore accordingly."
+Code: Player.prototype.GameRound()
+Expected output: Player.roundScore = roundScore + currentScore Player.gameScore = gameScore + roundScore
+OR (one is rolled) Player.roundScore = 0;
 
 Describe: GameRound()
-Test: "It should console.log "player two turn" if a 1 is passed into GameRound()"
+Test: "It should console.log "next player turn" if a 1 is passed into GameRound()"
 Code: GameRound(1);
-Expected output:"player two turn"
+Expected output:"next player turn"
 
 Test: "It should console.log playerScore if any other number is passed into it
 Code: GameRound(2);
@@ -51,11 +51,18 @@ Expected output: 2
 5. GitHub
 6. Bootstrap
 7. Jquery
+8. OOP (Object Oriented Programming)
 
 ### Contact:
 
-Isaac's ✉️ [Email](mailto:ipdxcreative@gmail.com)
+Isaac [GitHub](https://github.com/isaacrmoreno)
+
+Giancarlo [GitHub](https://github.com/Bobloblawlobslawbomb)
+
+Cass [GitHub](https://github.com/cass1618)
+
+Carlos [GitHub](https://github.com/yesthecarlos)
 
 <!-- ### Licenses:
 
-MIT &copy; 2021 Carlos Mendez, Cassandra Copp, Giancarlo Vigneri, Isaac Moreno -->
+MIT &copy; 2021 Cassandra Copp, Giancarlo Vigneri, Isaac Moreno, Carlos Mendez -->
