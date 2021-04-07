@@ -1,32 +1,41 @@
 // BUSINESS LOGIC
-function Player(label, previousScore, currentScore){
+function Player(label, previousScore, currentScore, totalScore){
   this.label = label;
   this.previousScore = previousScore;
   this.currentScore = currentScore;
+  this.totalScore = totalScore;
 }
-const player1 = new Player("Donald", 0,0)
-//by this point the constructor has made the player1 'Object'
 
-// This function returns our random number
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); 
 }
 
-function rollDie () {
-  return getRandomInt(1,7);
-}// rollDie() returns a random # between 1-6
-
+// This function returns a random # between 1-6
 function playerRoll() {
-  return rollDie();  
-}// playerRoll
-
+  return getRandomInt(1,7); 
+} 
 // ^^^^ This works great
+
+// > Roll > Roll again || pass > switch players. Display Roll Total: 100. Times Rolls: X
+
+// when we roll we get a value. we store value (total/current score) in variable. Decide to roll again and add that new value (current score) to original value to have (total Score) OR pass.
+
+
+
+
+
+// (Easy) computer rolls > rolls again > passes
+// (hard) Computer rolls based on if then statement
+// if <=3 computer passes || >=4 && <=6
+
+
 
 Player.prototype.outcome() {
     let  playerRoll = playerRoll();
       if (playerRoll != 1) {
+        this.totalScore += playerRoll();
       //add to thisRoundScore
       //Can roll again or pass
       playerRoll = 0;
@@ -46,31 +55,22 @@ function canTakeAnotherTurn(previousScore) {
   }
 }
 
-/*
-if (playerRoll === 1){
-  //score is 0
-  //next players turn
-  }else if (playerRoll === false ){
-  //score would be all previous scores added together
-  //
-  }
-}
-*/
-
 // UI Logic 
+const player1 = new Player("Donald", 0,0)
+//by this point the constructor has made the player1 'Object'
 
 $(document).ready(function(event) {
   event.preventDefault()
   
   $("#roll").click(function() {
-    console.log(`${getRandomInt}`) 
-  });
-  
+    let PlayerRoll1 = rollDIe()
+    playerRoll1
 
+    console.log(`${outcome}`) 
+  });
 });
 
-//let PlayerRoll1 = rollDIe()
-//playerRoll1
+
 
 
 

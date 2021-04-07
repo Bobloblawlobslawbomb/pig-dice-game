@@ -1,5 +1,27 @@
 body {
+  font-family: "Poiret One", cursive;
   text-align: center;
   margin: 20px;
 }
-  
+
+button {
+  margin: 20px 10px;
+}
+
+#roll,
+#pass {
+  transition: transform 0.2s;
+}
+
+#roll:hover {
+  transform: scale(1.08);
+}
+#pass:hover {
+  transform: scale(1.08);
+}
+
+img {
+  max-width: 100px;
+  display: none;
+  text-align: center;
+}

@@ -18,9 +18,9 @@ Pig dice is a dice game where players takes turns rolling a single die. They can
 
 ### Testing:
 
-Describe: rollDie()
+Describe: playerRoll()
 Test: "It should return an integer between 1 and 6."
-Code: rollDie();
+Code: playerRoll();
 Expected output: 1 || 2 || 3 || 4 || 5 || 6
 
 One die
