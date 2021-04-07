@@ -1,22 +1,52 @@
-Pig is a simple dice game first described in print by John Scarne in 1945.[1] Players take turns to roll a single die as many times as they wish, adding all roll results to a running total, but losing their gained score for the turn if they roll a 1.
+### Pig Dice Game
 
-As with many games of folk origin, Pig is played with many rule variations, including the use of two dice instead of one. Commercial variants of two-dice Pig include Pass the Pigs, Pig Dice,[2] and Skunk.[3] Pig is commonly used by mathematics teachers to teach probability concepts.
+##### By Carlos Mendez, Cassandra Copp, Giancarlo Vigneri, Isaac Moreno
 
-Pig is one of a family of dice games described by Reiner Knizia as "jeopardy dice games", where the dominant type of decision is whether or not to jeopardize previous gains by rolling for potential greater gains.[4]
+[View Here]()
 
-Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+### Description:
 
-If the player rolls a 1, they score nothing and it becomes the next player's turn.
-If the player rolls any other number, it is added to their turn total and the player's turn continues.
-If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
-The first player to score 100 or more points wins.
+Pig dice is a dice game where players takes turns rolling a single die. They can roll as many times as they like, adding up their total each time unless they decide to pass or roll a one where they lose their total.
 
-For example, the first player, Donald, begins a turn with a roll of 5. Donald could hold and score 5 points, but chooses to roll again. Donald rolls a 2, and could hold with a turn total of 7 points, but chooses to roll again. Donald rolls a 1, and must end his turn without scoring. The next player, Alexis, rolls the sequence 4-5-3-5-5, after which she chooses to hold, and adds her turn total of 22 points to her score.
+### Set Up Instructions:
 
-## TESTING
+1. Clone this [repository]() to your desktop.
+2. Navigate to the top level of the directory.
+3. Open Index.html in your browser.
+
+### Bugs:
+
+### Testing:
 
 Describe: rollDie()
 Test: "It should return an integer between 1 and 6."
 Code: rollDie();
 Expected output: 1 || 2 || 3 || 4 || 5 || 6
 
+One die
+Player may roll or hold
+If player rolls 1 they score 0 for the round and end turn
+If player holds their score for the round is added to total score
+If player reaches 100 total score they win
+
+## Describe:
+
+For example, the first player, Donald, begins a turn with a roll of 5. Donald could hold and score 5 points, but chooses to roll again. Donald rolls a 2, and could hold with a turn total of 7 points, but chooses to roll again. Donald rolls a 1, and must end his turn without scoring. The next player, Alexis, rolls the sequence 4-5-3-5-5, after which she chooses to hold, and adds her turn total of 22 points to her score.
+
+### Technologies Used:
+
+1. HTML
+2. CSS
+3. JavaScript
+4. VSCode
+5. GitHub
+6. Bootstrap
+7. Jquery
+
+### Contact:
+
+Isaac's ✉️ [Email](mailto:ipdxcreative@gmail.com)
+
+<!-- ### Licenses:
+
+MIT &copy; 2021 Carlos Mendez, Cassandra Copp, Giancarlo Vigneri, Isaac Moreno -->
